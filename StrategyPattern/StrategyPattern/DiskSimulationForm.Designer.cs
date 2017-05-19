@@ -1,6 +1,6 @@
 ﻿namespace StrategyPattern
 {
-    partial class Form1
+    partial class DiskSimulationForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnStart = new System.Windows.Forms.Button();
             this.btnStop = new System.Windows.Forms.Button();
             this.lbAlgorithms = new System.Windows.Forms.ListBox();
@@ -38,6 +39,7 @@
             this.btnAddRequest = new System.Windows.Forms.Button();
             this.lbProcessedRequests = new System.Windows.Forms.ListBox();
             this.lblProcessedRequests = new System.Windows.Forms.Label();
+            this.formupdatetimer = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.nudRequestValue)).BeginInit();
             this.SuspendLayout();
             // 
@@ -65,10 +67,15 @@
             // lbAlgorithms
             // 
             this.lbAlgorithms.FormattingEnabled = true;
+            this.lbAlgorithms.Items.AddRange(new object[] {
+            "FIFO",
+            "SSTF",
+            "SCAN"});
             this.lbAlgorithms.Location = new System.Drawing.Point(12, 26);
             this.lbAlgorithms.Name = "lbAlgorithms";
             this.lbAlgorithms.Size = new System.Drawing.Size(120, 95);
             this.lbAlgorithms.TabIndex = 2;
+            this.lbAlgorithms.SelectedIndexChanged += new System.EventHandler(this.lbAlgorithms_SelectedIndexChanged);
             // 
             // lblAlgorithms
             // 
@@ -99,9 +106,19 @@
             // nudRequestValue
             // 
             this.nudRequestValue.Location = new System.Drawing.Point(151, 132);
+            this.nudRequestValue.Maximum = new decimal(new int[] {
+            16565,
+            0,
+            0,
+            0});
             this.nudRequestValue.Name = "nudRequestValue";
             this.nudRequestValue.Size = new System.Drawing.Size(109, 20);
             this.nudRequestValue.TabIndex = 6;
+            this.nudRequestValue.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // btnAddRequest
             // 
@@ -130,7 +147,12 @@
             this.lblProcessedRequests.TabIndex = 9;
             this.lblProcessedRequests.Text = "Processed requests:";
             // 
-            // Form1
+            // formupdatetimer
+            // 
+            this.formupdatetimer.Interval = 300;
+            this.formupdatetimer.Tick += new System.EventHandler(this.formupdatetimer_Tick);
+            // 
+            // DiskSimulationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -145,8 +167,9 @@
             this.Controls.Add(this.lbAlgorithms);
             this.Controls.Add(this.btnStop);
             this.Controls.Add(this.btnStart);
-            this.Name = "Form1";
+            this.Name = "DiskSimulationForm";
             this.Text = "DiskScheduler";
+            this.Load += new System.EventHandler(this.DiskSimulationForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nudRequestValue)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -165,6 +188,7 @@
         private System.Windows.Forms.Button btnAddRequest;
         private System.Windows.Forms.ListBox lbProcessedRequests;
         private System.Windows.Forms.Label lblProcessedRequests;
+        private System.Windows.Forms.Timer formupdatetimer;
     }
 }
 

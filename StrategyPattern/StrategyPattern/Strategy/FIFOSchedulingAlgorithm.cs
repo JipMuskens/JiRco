@@ -6,12 +6,13 @@ using System.Threading.Tasks;
 
 namespace StrategyPattern
 {
+    //First In First Out
     class FIFOSchedulingAlgorithm : ISchedulingAlgorithm
     {
         public int FindNextItemToProcess(List<int> list, int current_request)
         {
             int index_to_process = -1;
-            if(list.Count > 0)
+            if(list != null && list.Count > 0)
             { index_to_process = 0; }
 
             return index_to_process;
