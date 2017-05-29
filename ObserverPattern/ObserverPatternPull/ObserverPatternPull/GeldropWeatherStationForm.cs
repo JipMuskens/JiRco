@@ -10,23 +10,22 @@ using System.Windows.Forms;
 
 namespace ObserverPatternPull
 {
-    public partial class EindhovenWeatherStationForm : Form
+    public partial class GeldropWeatherStationForm : Form
     {
-        private EindhovenWeatherStation eindhoven;
-        public EindhovenWeatherStationForm()
+        private GeldropWeatherStation geldrop;
+
+        public GeldropWeatherStationForm()
         {
-            eindhoven = null;
             InitializeComponent();
         }
 
         public void AddWeather(Weather weather)
         {
-            if(weather == null)
+            if (weather == null)
             { throw new ArgumentNullException(); }
 
-            eindhoven = new EindhovenWeatherStation(weather);
+            geldrop = new GeldropWeatherStation(weather);
             lblLocation.Text = weather.GetState().location;
-
             updateWeatherStation();
         }
 
@@ -37,14 +36,13 @@ namespace ObserverPatternPull
 
         private void updateWeatherStation()
         {
-            if (eindhoven != null)
+            if (geldrop != null)
             {
-                lblTemperature.Text = eindhoven.temperature.ToString();
-                lblClouded.Text = (eindhoven.isclouded) ? "True" : "False";
-            } 
+                lblTemperature.Text = geldrop.temperature.ToString();
+            }
         }
 
-        private void EindhovenWeatherStationForm_Load(object sender, EventArgs e)
+        private void GeldropWeatherStationForm_Load(object sender, EventArgs e)
         {
 
         }

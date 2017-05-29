@@ -46,6 +46,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AmsterdamWeatherStationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AmsterdamWeatherStationForm.Designer.cs">
+      <DependentUpon>AmsterdamWeatherStationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AmsterdamWeatherStation.cs" />
+    <Compile Include="GeldropWeatherStation.cs" />
     <Compile Include="EindhovenWeatherStation.cs" />
     <Compile Include="EindhovenWeatherStationForm.cs">
       <SubType>Form</SubType>
@@ -53,8 +61,20 @@
     <Compile Include="EindhovenWeatherStationForm.Designer.cs">
       <DependentUpon>EindhovenWeatherStationForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="GeldropWeatherStationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GeldropWeatherStationForm.Designer.cs">
+      <DependentUpon>GeldropWeatherStationForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="iWeather.cs" />
     <Compile Include="iWeatherStation.cs" />
+    <Compile Include="NationalWeatherStationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NationalWeatherStationForm.Designer.cs">
+      <DependentUpon>NationalWeatherStationForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Weather.cs" />
     <Compile Include="WeatherState.cs" />
     <Compile Include="WeatherStationsForm.cs">
@@ -65,8 +85,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AmsterdamWeatherStationForm.resx">
+      <DependentUpon>AmsterdamWeatherStationForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EindhovenWeatherStationForm.resx">
       <DependentUpon>EindhovenWeatherStationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GeldropWeatherStationForm.resx">
+      <DependentUpon>GeldropWeatherStationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NationalWeatherStationForm.resx">
+      <DependentUpon>NationalWeatherStationForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="WeatherStationsForm.resx">
       <DependentUpon>WeatherStationsForm.cs</DependentUpon>
