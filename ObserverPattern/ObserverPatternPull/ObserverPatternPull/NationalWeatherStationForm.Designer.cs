@@ -37,10 +37,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.lbWeathers = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lblRainLevelAverage = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.lblTemperatureAverage = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.lblCloudedPercentage = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -50,7 +50,7 @@
             // lblTemperature
             // 
             this.lblTemperature.AutoSize = true;
-            this.lblTemperature.Location = new System.Drawing.Point(264, 18);
+            this.lblTemperature.Location = new System.Drawing.Point(265, 18);
             this.lblTemperature.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTemperature.Name = "lblTemperature";
             this.lblTemperature.Size = new System.Drawing.Size(13, 17);
@@ -60,7 +60,7 @@
             // lblClouded
             // 
             this.lblClouded.AutoSize = true;
-            this.lblClouded.Location = new System.Drawing.Point(264, 45);
+            this.lblClouded.Location = new System.Drawing.Point(265, 45);
             this.lblClouded.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblClouded.Name = "lblClouded";
             this.lblClouded.Size = new System.Drawing.Size(13, 17);
@@ -83,14 +83,14 @@
             this.label3.Location = new System.Drawing.Point(141, 18);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(94, 17);
+            this.label3.Size = new System.Drawing.Size(123, 17);
             this.label3.TabIndex = 8;
-            this.label3.Text = "Temperature:";
+            this.label3.Text = "Temperature in ° :";
             // 
             // lblrainlevel
             // 
             this.lblrainlevel.AutoSize = true;
-            this.lblrainlevel.Location = new System.Drawing.Point(264, 74);
+            this.lblrainlevel.Location = new System.Drawing.Point(265, 74);
             this.lblrainlevel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblrainlevel.Name = "lblrainlevel";
             this.lblrainlevel.Size = new System.Drawing.Size(13, 17);
@@ -125,15 +125,15 @@
             this.label1.Size = new System.Drawing.Size(306, 1);
             this.label1.TabIndex = 15;
             // 
-            // label5
+            // lblRainLevelAverage
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(173, 195);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(13, 17);
-            this.label5.TabIndex = 21;
-            this.label5.Text = "-";
+            this.lblRainLevelAverage.AutoSize = true;
+            this.lblRainLevelAverage.Location = new System.Drawing.Point(174, 195);
+            this.lblRainLevelAverage.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblRainLevelAverage.Name = "lblRainLevelAverage";
+            this.lblRainLevelAverage.Size = new System.Drawing.Size(13, 17);
+            this.lblRainLevelAverage.TabIndex = 21;
+            this.lblRainLevelAverage.Text = "-";
             // 
             // label6
             // 
@@ -148,22 +148,22 @@
             // lblTemperatureAverage
             // 
             this.lblTemperatureAverage.AutoSize = true;
-            this.lblTemperatureAverage.Location = new System.Drawing.Point(173, 139);
+            this.lblTemperatureAverage.Location = new System.Drawing.Point(174, 139);
             this.lblTemperatureAverage.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTemperatureAverage.Name = "lblTemperatureAverage";
             this.lblTemperatureAverage.Size = new System.Drawing.Size(13, 17);
             this.lblTemperatureAverage.TabIndex = 19;
             this.lblTemperatureAverage.Text = "-";
             // 
-            // label8
+            // lblCloudedPercentage
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(173, 166);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(13, 17);
-            this.label8.TabIndex = 18;
-            this.label8.Text = "-";
+            this.lblCloudedPercentage.AutoSize = true;
+            this.lblCloudedPercentage.Location = new System.Drawing.Point(174, 166);
+            this.lblCloudedPercentage.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblCloudedPercentage.Name = "lblCloudedPercentage";
+            this.lblCloudedPercentage.Size = new System.Drawing.Size(13, 17);
+            this.lblCloudedPercentage.TabIndex = 18;
+            this.lblCloudedPercentage.Text = "-";
             // 
             // label9
             // 
@@ -171,9 +171,9 @@
             this.label9.Location = new System.Drawing.Point(50, 166);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(64, 17);
+            this.label9.Size = new System.Drawing.Size(95, 17);
             this.label9.TabIndex = 17;
-            this.label9.Text = "Clouded:";
+            this.label9.Text = "Clouded in %:";
             // 
             // label10
             // 
@@ -181,9 +181,9 @@
             this.label10.Location = new System.Drawing.Point(50, 139);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(94, 17);
+            this.label10.Size = new System.Drawing.Size(123, 17);
             this.label10.TabIndex = 16;
-            this.label10.Text = "Temperature:";
+            this.label10.Text = "Temperature in ° :";
             // 
             // label11
             // 
@@ -207,10 +207,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(334, 221);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.label5);
+            this.Controls.Add(this.lblRainLevelAverage);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.lblTemperatureAverage);
-            this.Controls.Add(this.label8);
+            this.Controls.Add(this.lblCloudedPercentage);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label1);
@@ -222,6 +222,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.MaximizeBox = false;
             this.Name = "NationalWeatherStationForm";
             this.Text = "NationalWeatherStationForm";
             this.Load += new System.EventHandler(this.NationalWeatherStationForm_Load);
@@ -240,10 +241,10 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ListBox lbWeathers;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblRainLevelAverage;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label lblTemperatureAverage;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lblCloudedPercentage;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;

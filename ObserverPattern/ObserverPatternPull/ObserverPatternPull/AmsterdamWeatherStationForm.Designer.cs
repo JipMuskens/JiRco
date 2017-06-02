@@ -116,6 +116,7 @@
             this.Controls.Add(this.lblLocation);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.MaximizeBox = false;
             this.Name = "AmsterdamWeatherStationForm";
             this.Text = "AmsterdamWeatherStation";
             this.Load += new System.EventHandler(this.AmsterdamWeatherStation_Load);

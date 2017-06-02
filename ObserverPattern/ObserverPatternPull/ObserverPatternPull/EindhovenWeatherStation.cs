@@ -28,8 +28,9 @@ namespace ObserverPatternPull
             { throw new ArgumentNullException(); }
 
             _weather = weather;
-
             _weather.Attach(this);
+
+            Update();
         }
 
         ~EindhovenWeatherStation()

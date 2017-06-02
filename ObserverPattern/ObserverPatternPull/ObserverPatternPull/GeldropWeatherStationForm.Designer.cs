@@ -92,6 +92,7 @@
             this.Controls.Add(this.lblLocation);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.MaximizeBox = false;
             this.Name = "GeldropWeatherStationForm";
             this.Text = "GeldropWeatherStationForm";
             this.Load += new System.EventHandler(this.GeldropWeatherStationForm_Load);

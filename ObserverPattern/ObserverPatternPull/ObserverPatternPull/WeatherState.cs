@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace ObserverPatternPull
 {
+    /*
+     * WeatherState contains the meteorological state of weather, but simplified.
+     */
     public struct WeatherState
     {
         public float temperature;

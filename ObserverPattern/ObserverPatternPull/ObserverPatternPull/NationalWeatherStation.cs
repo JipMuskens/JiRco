@@ -6,17 +6,29 @@ using System.Threading.Tasks;
 
 namespace ObserverPatternPull
 {
-    public class GeldropWeatherStation : iWeatherStation
+    public class NationalWeatherStation : iWeatherStation
     {
         private Weather _weather;
+        private float _rainlevel;
         private float _temperature;
+        private bool _isclouded;
 
+        public float rainlevel
+        {
+            get { return _rainlevel; }
+        }
+    
         public float temperature
         {
             get { return _temperature; }
         }
 
-        public GeldropWeatherStation(Weather weather)
+        public bool isclouded
+        {
+            get { return _isclouded; }
+        }
+
+        public NationalWeatherStation(Weather weather)
         {
             if (weather == null)
             { throw new ArgumentNullException(); }
@@ -27,15 +39,20 @@ namespace ObserverPatternPull
             Update();
         }
 
-        ~GeldropWeatherStation()
-        {
-            _weather.Detach(this);
-        }
+        ~NationalWeatherStation()
+        { _weather.Detach(this); }
 
         public void Update()
         {
             WeatherState state = _weather.GetState();
+            _rainlevel = state.rain_in_mm;
+            _isclouded = state.clouded;
             _temperature = state.temperature;
+        }
+
+        public override string ToString()
+        {
+            return _weather.GetState().location;
         }
     }
 }

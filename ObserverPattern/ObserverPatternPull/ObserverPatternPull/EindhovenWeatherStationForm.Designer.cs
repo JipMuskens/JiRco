@@ -108,7 +108,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(256, 98);
+            this.ClientSize = new System.Drawing.Size(276, 98);
             this.Controls.Add(this.lblTemperature);
             this.Controls.Add(this.lblClouded);
             this.Controls.Add(this.label4);
@@ -117,6 +117,7 @@
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
             this.Name = "EindhovenWeatherStationForm";
             this.Text = "EindhovenWeatherStationForm";
             this.Load += new System.EventHandler(this.EindhovenWeatherStationForm_Load);
