@@ -7,12 +7,12 @@ using System.Windows.Forms;
 
 namespace CarFactory
 {
-    public class EK21 : iCarEngine
+    public class EK21Engine : iCarEngine
     {
-        public EK21()
+        public EK21Engine()
         { }
 
-        ~EK21()
+        ~EK21Engine()
         { }
 
         public void Accelerate()

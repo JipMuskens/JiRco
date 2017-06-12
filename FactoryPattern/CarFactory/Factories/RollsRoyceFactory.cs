@@ -10,12 +10,12 @@ namespace CarFactory.Factories
     {
         public iCarBody ManufactureBody()
         {
-            return new Sedan();
+            return new SedanBody();
         }
 
         public iCarEngine ManufactureEngine()
         {
-            return new Trend7000();
+            return new Trend7000Engine();
         }
 
         public override string ToString()

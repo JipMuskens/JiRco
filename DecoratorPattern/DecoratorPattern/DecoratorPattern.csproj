@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D90BE9A9-5843-4485-A4CA-51077F39847D}</ProjectGuid>
+    <ProjectGuid>{66502637-9346-44DD-AF3A-D377383ECFD6}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>CarFactory</RootNamespace>
-    <AssemblyName>CarFactory</AssemblyName>
+    <RootNamespace>DecoratorPattern</RootNamespace>
+    <AssemblyName>DecoratorPattern</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -45,28 +45,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Car Bodies\SedanBody.cs" />
-    <Compile Include="Car Bodies\CoupeBody.cs" />
-    <Compile Include="Car Bodies\CabrioBody.cs" />
-    <Compile Include="Car Engines\1LR_GUEEngine.cs" />
-    <Compile Include="Car Engines\EK21Engine.cs" />
-    <Compile Include="Car Engines\Trend7000Engine.cs" />
-    <Compile Include="CarFactoryForms.cs">
+    <Compile Include="Components\TeslaModelS.cs" />
+    <Compile Include="Components\iCar.cs" />
+    <Compile Include="Components\HondaCivic.cs" />
+    <Compile Include="Components\ToyotaAuris.cs" />
+    <Compile Include="Decorations\Airco.cs" />
+    <Compile Include="Decorations\VinylSticker.cs" />
+    <Compile Include="Decorations\Hydraulics.cs" />
+    <Compile Include="Decorations\PaintJob.cs" />
+    <Compile Include="Decorations\TuningOptions.cs" />
+    <Compile Include="TuningShopForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CarFactoryForms.Designer.cs">
-      <DependentUpon>CarFactoryForms.cs</DependentUpon>
+    <Compile Include="TuningShopForm.Designer.cs">
+      <DependentUpon>TuningShopForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Factories\SubaruFactory.cs" />
-    <Compile Include="Factories\ToyotaFactory.cs" />
-    <Compile Include="Factories\RollsRoyceFactory.cs" />
-    <Compile Include="iCarBody.cs" />
-    <Compile Include="iCarEngine.cs" />
-    <Compile Include="iVehicleFactory.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="CarFactoryForms.resx">
-      <DependentUpon>CarFactoryForms.cs</DependentUpon>
+    <EmbeddedResource Include="TuningShopForm.resx">
+      <DependentUpon>TuningShopForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -90,5 +87,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

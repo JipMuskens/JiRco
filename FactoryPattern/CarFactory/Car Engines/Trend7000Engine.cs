@@ -7,12 +7,12 @@ using System.Windows.Forms;
 
 namespace CarFactory
 {
-    public class e1LR_GUE : iCarEngine
+    public class Trend7000Engine : iCarEngine
     {
-        public e1LR_GUE()
+        public Trend7000Engine()
         { }
 
-        ~e1LR_GUE()
+        ~Trend7000Engine()
         { }
 
         public void Accelerate()
@@ -27,18 +27,19 @@ namespace CarFactory
 
         public void Start()
         {
-            MessageBox.Show(EngineName() + " started");
+            MessageBox.Show(EngineName() + " taken off");
         }
 
         public void Stop()
         {
-            MessageBox.Show(EngineName() + " stopped");
+            MessageBox.Show(EngineName() + " landed");
         }
 
         public string EngineName()
         {
-            return "Toyota 1LR-GUE";
+            return "Rolls Royce Trend 7000";
         }
+
         public override string ToString()
         {
             return EngineName();

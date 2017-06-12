@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace CarFactory
 {
-    public class Coupe : iCarBody
+    public class CabrioBody : iCarBody
     {
-        public Coupe()
+        public CabrioBody()
         { }
 
-        ~Coupe()
+        ~CabrioBody()
         { }
 
         public bool CanFloatOnWater()
@@ -24,12 +24,12 @@ namespace CarFactory
          */
         public double InteriorSpace()
         {
-            return 500;
+            return 400;
         }
 
         public bool IsEaroDynamic()
         {
-            return true;
+            return false;
         }
 
         public int NumberOfWheels()
@@ -39,7 +39,7 @@ namespace CarFactory
 
         public override string ToString()
         {
-            string output = string.Format("Body type: Coupe, Floats on water: {0}, Interior space: {1} sq cm, Earodynamic: {2}, numbers of wheels: {3}",
+            string output = string.Format("Body type: Cabrio, Floats on water: {0}, Interior space: {1} sq cm, Earodynamic: {2}, numbers of wheels: {3}",
                 (CanFloatOnWater() ? "yes" : "no"),
                 InteriorSpace(),
                 (IsEaroDynamic() ? "yes" : "no"),

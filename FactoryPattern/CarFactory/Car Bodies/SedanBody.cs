@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace CarFactory
 {
-    public class Sedan : iCarBody
+    public class SedanBody : iCarBody
     {
-        public Sedan()
+        public SedanBody()
         { }
 
-        ~Sedan()
+        ~SedanBody()
         { }
 
         public bool CanFloatOnWater()
