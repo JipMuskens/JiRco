@@ -48,6 +48,7 @@
             this.lbUntunedCars.Name = "lbUntunedCars";
             this.lbUntunedCars.Size = new System.Drawing.Size(147, 100);
             this.lbUntunedCars.TabIndex = 0;
+            this.lbUntunedCars.SelectedIndexChanged += new System.EventHandler(this.lbUntunedCars_SelectedIndexChanged);
             // 
             // lblUntunedCarsInShop
             // 

@@ -33,20 +33,25 @@ namespace DecoratorPattern
 
         private void btTune_Click(object sender, EventArgs e)
         {
-            iCar car = (iCar)lbUntunedCars.SelectedItem;
-            if(car == null)
-            {
-                MessageBox.Show("Must select a Car");
-                return;
-            }
-
-            if(lbTuneOptions.Items.Count <= 0)
+            if (lbTuneOptions.Items.Count <= 0)
             {
                 MessageBox.Show("Must select tuning options");
                 return;
             }
 
-            lbUntunedCars.Items.RemoveAt(lbUntunedCars.SelectedIndex);
+            iCar car = (iCar)lbUntunedCars.SelectedItem;
+            if(car == null)
+            {
+                car = (iCar)lbTunedCars.SelectedItem;
+                if (car == null)
+                {
+                    MessageBox.Show("Must select a Car");
+                    return;
+                }
+                else { lbTunedCars.Items.RemoveAt(lbTunedCars.SelectedIndex); }
+
+            }
+            else { lbUntunedCars.Items.RemoveAt(lbUntunedCars.SelectedIndex); }
 
             iCar tuning_options = car;
 
@@ -65,7 +70,11 @@ namespace DecoratorPattern
                         tuning_options = new VinylSticker(tuning_options);
                         break;
                     case "Airco":
-                        tuning_options = new Airco(tuning_options);
+                        Airco airco = new Airco(tuning_options);
+                        //To show you can have different funtionality for each decorator we will test the airco:
+                        airco.TurnOn();
+                        airco.TurnOff();
+                        tuning_options = airco;
                         break;
                 }
             }
@@ -92,7 +101,16 @@ namespace DecoratorPattern
             if(car == null)
             { return; }
 
+            lbUntunedCars.ClearSelected();
+
             tbLabelCars.Text = "Costs: \u20AC " + car.cost() + " " + car.ToString();
+
+
+        }
+
+        private void lbUntunedCars_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            lbTunedCars.ClearSelected();
         }
     }
 }
