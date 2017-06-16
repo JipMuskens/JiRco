@@ -10,6 +10,8 @@ namespace DecoratorPattern
 {
     public class Airco : TuningOptions
     {
+        static public string Name { get { return "Airco"; } }
+
         public Airco(iCar car) : base(car)
         { }
 

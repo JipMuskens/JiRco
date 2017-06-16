@@ -8,6 +8,8 @@ namespace DecoratorPattern
 {
     public class PaintJob : TuningOptions
     {
+        static public string Name { get { return "PaintJob"; } }
+
         public PaintJob(iCar car) : base(car)
         { }
 

@@ -8,6 +8,8 @@ namespace DecoratorPattern
 {
     public class Hydraulics : TuningOptions
     {
+        static public string Name { get { return "Hydraulics"; } }
+
         public Hydraulics(iCar car) : base(car)
         { }
 

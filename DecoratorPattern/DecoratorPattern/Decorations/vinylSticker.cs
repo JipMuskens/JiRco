@@ -8,6 +8,8 @@ namespace DecoratorPattern
 {
     public class VinylSticker : TuningOptions
     {
+        static public readonly string Name = "VinylSticker";
+
         public VinylSticker(iCar car) : base(car)
         { }
 
