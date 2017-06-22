@@ -19,18 +19,12 @@ namespace VisitorPattern
     public class PhoneAppVisitor : iPhoneVisitor
     {
         private PersonIdentity[] PersonIdentities;
-        public PhoneAppVisitor()
+        public PhoneAppVisitor(PersonIdentity[] identities)
         {
-            PersonIdentities = new PersonIdentity[]
-            {
-                new PersonIdentity{ identity = 10000, name = "Jip Musketier" },
-                new PersonIdentity{ identity = 10005, name = "Marco shrek" },
-                new PersonIdentity{ identity = 10010, name = "Wouter Whatsitsname" },
-                new PersonIdentity{ identity = 10015, name = "Andre Wazig" },
-                new PersonIdentity{ identity = 10020, name = "Maarten Glutenboii" },
-                new PersonIdentity{ identity = 10025, name = "Evert Cozmo" },
-                new PersonIdentity{ identity = 10030, name = "Freddy Wrong" },
-            };
+            if(identities == null)
+            {  throw new NullReferenceException("identities is null"); }
+
+            PersonIdentities = identities;
         }
 
         /* Pre:
@@ -38,20 +32,14 @@ namespace VisitorPattern
          */
         public void Visit(Camera cam)
         {
+            if (cam == null) return;
+
             Picture p = cam.TakePicture();
-
             double redness = p.Coverage(picture_channel_type.red);
-
-            Console.WriteLine(redness);
-
             if (redness < 50)
-            {
-                MessageBox.Show("Mobile app: Expected to see a red-ish face");
-            }
+            { MessageBox.Show("Mobile app: Expected to see a red-ish face"); }
             else
-            {
-                MessageBox.Show("Mobile app: Detected red-ish face!");
-            }
+            { MessageBox.Show("Mobile app: Detected red-ish face!"); }
         }
 
         /*  Pre:
@@ -59,6 +47,8 @@ namespace VisitorPattern
          */
         public void Visit(FingerprintScanner scanner)
         {
+            if (scanner == null) return;
+
             int id = scanner.ScanFinger();
             PersonIdentity recognisedPerson = new PersonIdentity { identity = 0, name = "" };
 
@@ -86,6 +76,8 @@ namespace VisitorPattern
          */
         public void Visit(Speaker speaker)
         {
+            if (speaker == null) return;
+
             speaker.ProduceFrequency(5000);
             speaker.ProduceFrequency(100);
         }
@@ -95,22 +87,20 @@ namespace VisitorPattern
          */
         public void Visit(Touchscreen ts)
         {
+            if (ts == null) return;
+
             TouchPoint[] points = ts.GetTouches();
-
             int index = points.Length;
-
             TouchPoint average = new TouchPoint { x = 0, y = 0 };
-
             while(--index > 0)
             {
                 average.x += points[index].x;
                 average.y += points[index].y;
             }
-
             average.x /= points.Length;
             average.y /= points.Length;
 
-            MessageBox.Show("Mobile app: Average point position: { x = " + average.x + ", y = " + average.y + " }");
+            MessageBox.Show("Mobile app: Average point position: { x = " + average.x + ", y = " + average.y + " } of " + points.Length + " points");
         }
 
         public override string ToString()

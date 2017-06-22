@@ -19,6 +19,8 @@ namespace VisitorPattern
          */
         public void Visit(Camera cam)
         {
+            if (cam == null) return;
+
             //Picture p = cam.TakePicture();
             MessageBox.Show("Diagnostics: Does nothing here..");
         }
@@ -28,6 +30,8 @@ namespace VisitorPattern
          */
         public void Visit(FingerprintScanner scanner)
         {
+            if (scanner == null) return;
+
             int id = scanner.ScanFinger();
             MessageBox.Show("Diagnostics: received identity from scanner: " + id);
         }
@@ -37,6 +41,8 @@ namespace VisitorPattern
          */
         public void Visit(Speaker speaker)
         {
+            if (speaker == null) return;
+
             speaker.ProduceFrequency(1000);
         }
 
@@ -45,16 +51,13 @@ namespace VisitorPattern
          */
         public void Visit(Touchscreen ts)
         {
-            TouchPoint[] points = ts.GetTouches();
+            if (ts == null) return;
 
+            TouchPoint[] points = ts.GetTouches();
             if(points.Length == 0)
-            {
-                MessageBox.Show("Diagnostics: Couldn't find any points from touch screen!");
-            }
+            { MessageBox.Show("Diagnostics: Couldn't find any points from touch screen!"); }
             else
-            {
-                MessageBox.Show("Diagnostics: Could find points: " + points.Length);
-            }
+            { MessageBox.Show("Diagnostics: Could find points: " + points.Length); }
         }
 
         public override string ToString()
