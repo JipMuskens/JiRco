@@ -9,10 +9,10 @@ namespace VisitorPattern
     public class FingerprintScanner : iPhoneElement
     {
         readonly static int scanIdentityFloorBase = 10000;
-        readonly static int scanIdentityRange = 30;
+        readonly static int scanIdentityRange = 35;
 
         public void Accept(iPhoneVisitor visitor)
-        { visitor.Visit(this); }
+        { if(visitor != null) visitor.Visit(this); }
 
         public int ScanFinger()
         {

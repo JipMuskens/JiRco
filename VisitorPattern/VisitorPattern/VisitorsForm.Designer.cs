@@ -1,6 +1,6 @@
 ﻿namespace VisitorPattern
 {
-    partial class Visitors
+    partial class VisitorsForm
     {
         /// <summary>
         /// Required designer variable.
@@ -73,9 +73,9 @@
             // 
             // btnVisit
             // 
-            this.btnVisit.Location = new System.Drawing.Point(362, 44);
+            this.btnVisit.Location = new System.Drawing.Point(13, 118);
             this.btnVisit.Name = "btnVisit";
-            this.btnVisit.Size = new System.Drawing.Size(80, 31);
+            this.btnVisit.Size = new System.Drawing.Size(322, 31);
             this.btnVisit.TabIndex = 4;
             this.btnVisit.Text = "Visit";
             this.btnVisit.UseVisualStyleBackColor = true;
@@ -85,7 +85,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(490, 147);
+            this.ClientSize = new System.Drawing.Size(345, 155);
             this.Controls.Add(this.btnVisit);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lbElements);

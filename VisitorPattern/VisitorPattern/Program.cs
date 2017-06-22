@@ -16,7 +16,7 @@ namespace VisitorPattern
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Visitors());
+            Application.Run(new VisitorsForm());
         }
     }
 }

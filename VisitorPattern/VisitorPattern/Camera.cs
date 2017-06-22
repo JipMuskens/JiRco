@@ -28,7 +28,7 @@ namespace VisitorPattern
     public class Camera : iPhoneElement
     {
         public void Accept(iPhoneVisitor visitor)
-        { visitor.Visit(this); }
+        { if (visitor != null) visitor.Visit(this); }
 
         public Picture TakePicture()
         { return new Picture(); }

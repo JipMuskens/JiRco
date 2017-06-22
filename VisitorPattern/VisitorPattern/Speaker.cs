@@ -10,7 +10,7 @@ namespace VisitorPattern
     public class Speaker : iPhoneElement
     {
         public void Accept(iPhoneVisitor visitor)
-        { visitor.Visit(this); }
+        { if (visitor != null) visitor.Visit(this); }
 
         public void ProduceFrequency(int frequency)
         { MessageBox.Show("Speakers are now producing a frequency of " + frequency + " Hz"); }
