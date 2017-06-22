@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace VisitorPattern
 {
-    public partial class Form1 : Form
+    public partial class Visitors : Form
     {
-        public Form1()
+        public Visitors()
         {
             InitializeComponent();
         }
