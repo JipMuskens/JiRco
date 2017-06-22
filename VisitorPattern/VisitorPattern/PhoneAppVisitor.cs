@@ -42,13 +42,15 @@ namespace VisitorPattern
 
             double redness = p.Coverage(picture_channel_type.red);
 
+            Console.WriteLine(redness);
+
             if (redness < 50)
             {
-                MessageBox.Show("Expected to see a red-ish face");
+                MessageBox.Show("Mobile app: Expected to see a red-ish face");
             }
             else
             {
-                MessageBox.Show("Detected red-ish face!");
+                MessageBox.Show("Mobile app: Detected red-ish face!");
             }
         }
 
@@ -71,11 +73,11 @@ namespace VisitorPattern
 
             if(recognisedPerson.identity == 0)
             {
-                MessageBox.Show("The fingerprint is not recognised");
+                MessageBox.Show("Mobile app: The fingerprint is not recognised");
             }
             else
             {
-                MessageBox.Show("Welcome home, " + recognisedPerson.name);
+                MessageBox.Show("Mobile app: Welcome home, " + recognisedPerson.name);
             }
         }
 
@@ -91,7 +93,7 @@ namespace VisitorPattern
         /* Pre:
          * Simulation : process touch screen for interacting with interface of app
          */
-        public void Visit(TouchScreen ts)
+        public void Visit(Touchscreen ts)
         {
             TouchPoint[] points = ts.GetTouches();
 
@@ -108,7 +110,12 @@ namespace VisitorPattern
             average.x /= points.Length;
             average.y /= points.Length;
 
-            MessageBox.Show("Average point position: { x = " + average.x + ", y = " + average.y + " }");
+            MessageBox.Show("Mobile app: Average point position: { x = " + average.x + ", y = " + average.y + " }");
+        }
+
+        public override string ToString()
+        {
+            return "Operator : Mobile App";
         }
     }
 }

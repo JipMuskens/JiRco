@@ -11,6 +11,6 @@ namespace VisitorPattern
         void Visit(Camera cam);
         void Visit(FingerprintScanner scanner);
         void Visit(Speaker speaker);
-        void Visit(TouchScreen ts);
+        void Visit(Touchscreen ts);
     }
 }

@@ -11,7 +11,7 @@ namespace VisitorPattern
         public double x;
         public double y;
     };
-    public class TouchScreen : iPhoneElement
+    public class Touchscreen : iPhoneElement
     {
         public void Accept(iPhoneVisitor visitor)
         { visitor.Visit(this); }
@@ -38,6 +38,11 @@ namespace VisitorPattern
             }
 
             return touches;
+        }
+
+        public override string ToString()
+        {
+            return "Touchscreen";
         }
     }
 }

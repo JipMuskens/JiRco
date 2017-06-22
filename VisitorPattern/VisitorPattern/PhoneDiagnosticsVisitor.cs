@@ -20,6 +20,7 @@ namespace VisitorPattern
         public void Visit(Camera cam)
         {
             //Picture p = cam.TakePicture();
+            MessageBox.Show("Diagnostics: Does nothing here..");
         }
 
         /* Pre:
@@ -28,7 +29,6 @@ namespace VisitorPattern
         public void Visit(FingerprintScanner scanner)
         {
             int id = scanner.ScanFinger();
-
             MessageBox.Show("Diagnostics: received identity from scanner: " + id);
         }
 
@@ -43,7 +43,7 @@ namespace VisitorPattern
         /* Pre:
          *  Checks if points are detected.
          */
-        public void Visit(TouchScreen ts)
+        public void Visit(Touchscreen ts)
         {
             TouchPoint[] points = ts.GetTouches();
 
@@ -55,6 +55,11 @@ namespace VisitorPattern
             {
                 MessageBox.Show("Diagnostics: Could find points: " + points.Length);
             }
+        }
+
+        public override string ToString()
+        {
+            return "Operator : Diagnostics";
         }
     }
 }

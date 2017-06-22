@@ -15,11 +15,13 @@ namespace VisitorPattern
     }
     public struct Picture
     {
-        /*  Returns the coverage in channel in random percentage
+        readonly static double noise = 10.0;//90% is simulated data, 10% is noise
+        /*  Pre:
+         *  Returns the coverage in channel in random percentage
          */
         public double Coverage(picture_channel_type channel)
         {
-            return new Random().NextDouble() % 100.0;
+            return new Random().NextDouble() * (100.0 - noise) + noise;
         }
     };
 
@@ -30,5 +32,10 @@ namespace VisitorPattern
 
         public Picture TakePicture()
         { return new Picture(); }
+
+        public override string ToString()
+        {
+            return "Camera";
+        }
     }
 }

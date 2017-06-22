@@ -8,12 +8,20 @@ namespace VisitorPattern
 {
     public class FingerprintScanner : iPhoneElement
     {
+        readonly static int scanIdentityFloorBase = 10000;
+        readonly static int scanIdentityRange = 30;
+
         public void Accept(iPhoneVisitor visitor)
         { visitor.Visit(this); }
 
         public int ScanFinger()
         {
-            return (new Random().Next() % 30 + 10000);
+            return (new Random().Next() % scanIdentityRange + scanIdentityFloorBase);
+        }
+
+        public override string ToString()
+        {
+            return "Fingerprint scanner";
         }
     }
 }

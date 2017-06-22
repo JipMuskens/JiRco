@@ -14,5 +14,10 @@ namespace VisitorPattern
 
         public void ProduceFrequency(int frequency)
         { MessageBox.Show("Speakers are now producing a frequency of " + frequency + " Hz"); }
+
+        public override string ToString()
+        {
+            return "Speaker";
+        }
     }
 }

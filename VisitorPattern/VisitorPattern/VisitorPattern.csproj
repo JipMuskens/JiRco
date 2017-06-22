@@ -45,16 +45,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="PhoneDiagnosticVisitor.cs" />
+    <Compile Include="PhoneAppVisitor.cs" />
+    <Compile Include="PhoneDiagnosticsVisitor.cs" />
     <Compile Include="Touchscreen.cs" />
     <Compile Include="Speaker.cs" />
     <Compile Include="FingerprintScanner.cs" />
     <Compile Include="Camera.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="Visitors.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Visitors.Designer.cs">
+      <DependentUpon>Visitors.cs</DependentUpon>
     </Compile>
     <Compile Include="iPhoneElement.cs" />
     <Compile Include="iPhoneVisitor.cs" />
@@ -69,6 +70,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Visitors.resx">
+      <DependentUpon>Visitors.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
